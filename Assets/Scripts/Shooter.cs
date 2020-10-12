@@ -32,15 +32,15 @@ public class Shooter : MonoBehaviour {
             bool isCloseEnough = 
                 (Mathf.Abs(spawner.transform.position.y - transform.position.y) <= Mathf.Epsilon);
 
-            if(isCloseEnough) {
+            if (isCloseEnough) {
                 myLaneSpawner = spawner;
             }
         }
     }
 
-    private bool IsAttackerInLane() {
+    private bool IsAttackerInLane() { 
         //if my lane spawner child count <= 0 then return false
-        if(myLaneSpawner.transform.childCount <= 0) {
+        if ((myLaneSpawner == null) || (myLaneSpawner.transform.childCount <= 0)) {
             return false;
         }
         else {
