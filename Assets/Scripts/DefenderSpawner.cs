@@ -43,10 +43,9 @@ public class DefenderSpawner : MonoBehaviour {
     }
 
     private void SpawnDefender(Vector2 spawnPos) {
-        Debug.Log(spawnPos);
         Defender newDefender = Instantiate(
             defender, spawnPos,
-            Quaternion.Euler(0, -180f, 0)) as Defender;
+            Quaternion.identity) as Defender;
     }
 
 }

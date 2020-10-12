@@ -7,21 +7,23 @@ public class Shooter : MonoBehaviour {
     [SerializeField] GameObject projectile;
     [SerializeField] GameObject gun;
     AttackerSpawner myLaneSpawner;
+    Animator animator;
 
     private void Start() {
+        //FindObjectOfType should be used for scripts but GetComponent can be used for components
+        //on the currenyt gameObject
         SetLaneSpawner();
+        animator = GetComponent<Animator>();
     }
 
     private void Update() {
 
         if (IsAttackerInLane()) {
-            Debug.Log("Shoot");
-            //TODO change animation state to shooting
+            animator.SetBool("isAttacking", true);
         }
 
         else {
-            Debug.Log("Attacker not in lane");
-            //TODO change animation state to idle
+            animator.SetBool("isAttacking", false);
         }
     }
 
