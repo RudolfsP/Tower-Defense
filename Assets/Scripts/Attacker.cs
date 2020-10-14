@@ -9,6 +9,14 @@ public class Attacker : MonoBehaviour {
     float currentSpeed = 1f;
     GameObject currentTarget;
 
+    private void Awake() {
+        FindObjectOfType<LevelController>().AttackerSpawned();
+    }
+
+    private void OnDestroy() {
+        FindObjectOfType<LevelController>().AttackerKilled();
+    }
+
     void Update() {
         //everything in the update method has to be multiplied by Time.deltaTime
         //to make things framerate independant
