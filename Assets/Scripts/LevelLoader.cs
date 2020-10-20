@@ -24,12 +24,26 @@ public class LevelLoader : MonoBehaviour {
 
     }
 
+    public void LoadMainMenu() {
+        Time.timeScale = 1;
+        SceneManager.LoadScene("Start Screen");
+    }
+
+    public void RestartScene() {
+        Time.timeScale = 1;
+        SceneManager.LoadScene(currentSceneIndex);
+    }
+
     public void LoadNextScene() {
         SceneManager.LoadScene(currentSceneIndex + 1);
     }
 
     public void LoadYouLose() {
         SceneManager.LoadScene("Lose Screen");
+    }
+
+    public void QuitGame() {
+        Application.Quit();
     }
 
 
