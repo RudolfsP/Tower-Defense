@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -8,12 +9,22 @@ public class Shooter : MonoBehaviour {
     [SerializeField] GameObject gun;
     AttackerSpawner myLaneSpawner;
     Animator animator;
+    GameObject projectileParent;
+    const string PROJECTILE_PARENT_NAME = "Projectiles";
 
     private void Start() {
         //FindObjectOfType should be used for scripts but GetComponent can be used for components
         //on the currenyt gameObject
         SetLaneSpawner();
         animator = GetComponent<Animator>();
+        CreateProjectileParent();
+    }
+
+    private void CreateProjectileParent() {
+        projectileParent = GameObject.Find(PROJECTILE_PARENT_NAME);
+        if(!projectileParent) {
+            projectileParent = new GameObject(PROJECTILE_PARENT_NAME);
+        }
     }
 
     private void Update() {
@@ -51,7 +62,10 @@ public class Shooter : MonoBehaviour {
     }
 
     public void Fire() {
-        Instantiate(projectile, gun.transform.position, Quaternion.identity);
+        GameObject newProjectile = 
+            Instantiate(projectile, gun.transform.position, Quaternion.identity)
+            as GameObject;
+        newProjectile.transform.parent = projectileParent.transform;
     }
 
 }

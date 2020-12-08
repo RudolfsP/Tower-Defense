@@ -78,7 +78,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7325dcd2939ba6048891ae050c5ac10a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  starCost: 200
+  starCost: 150
 --- !u!114 &1927779177
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -150,9 +150,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 32013ab517f9d3948b85eb1d21f36812, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 100
-  deathSound: {fileID: 0}
-  deathSoundVolume: 0.4
+  health: 50
   deathVFX: {fileID: 0}
 --- !u!1 &5923744357044107701
 GameObject:

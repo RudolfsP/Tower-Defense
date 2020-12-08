@@ -233,7 +233,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 32013ab517f9d3948b85eb1d21f36812, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 75
-  deathSound: {fileID: 0}
-  deathSoundVolume: 0.4
+  health: 50
   deathVFX: {fileID: 0}

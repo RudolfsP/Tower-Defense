@@ -183,9 +183,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 32013ab517f9d3948b85eb1d21f36812, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 100
-  deathSound: {fileID: 8300000, guid: 0401a9250bf350e4c93e3ad3904db38e, type: 3}
-  deathSoundVolume: 0.4
+  health: 500
   deathVFX: {fileID: 1906222994913036, guid: 740c2b3187d56c341b8cb78e8aa925c5, type: 3}
 --- !u!61 &3763639546131572822
 BoxCollider2D:
